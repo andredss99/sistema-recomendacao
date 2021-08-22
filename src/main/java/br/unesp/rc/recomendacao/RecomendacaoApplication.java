@@ -1,17 +1,23 @@
 package br.unesp.rc.recomendacao;
 
-import br.unesp.rc.recomendacao.entity.Usuario;
-import br.unesp.rc.recomendacao.service.UsuarioService;
+import br.unesp.rc.recomendacao.entity.Obra;
+import br.unesp.rc.recomendacao.service.ObraService;
+import br.unesp.rc.recomendacao.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class RecomendacaoApplication implements CommandLineRunner {
 
 	@Autowired
-	private UsuarioService usuarioService = new UsuarioService();
+	ObraService obraService = new ObraService();
 
 	public static void main(String[] args) {
 		SpringApplication.run(RecomendacaoApplication.class, args);
@@ -19,7 +25,9 @@ public class RecomendacaoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(usuarioService.findAll());
+		Obra obra = new Obra();
+		List<Obra> result = obraService.findAll();
+		System.out.println(result);
 	}
 
 }

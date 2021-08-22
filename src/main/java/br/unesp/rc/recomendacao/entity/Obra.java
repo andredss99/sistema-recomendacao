@@ -4,8 +4,10 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.BasicQuery;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,11 +15,14 @@ import java.util.ArrayList;
 @EqualsAndHashCode
 public class Obra {
 
-    private String nome;
-    private String urlPoster;
+    private int id;
+    private String title;
+    private String poster;
     private String pais;
-    private String diretor;
-    private int ano;
-    private double ratingAverage;
-    private ArrayList<String> generos;
+    private String directorName;
+    private int year;
+    private double rating;
+    private String sinopsis;
+    private List<Review> reviews;
+    private List<String> generos;
 }
