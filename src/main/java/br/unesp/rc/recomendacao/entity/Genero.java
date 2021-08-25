@@ -11,14 +11,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @ToString
 @EqualsAndHashCode
-@Document(collection = "usuario")
-public class Usuario {
+@Document(collection = "genres")
+public class Genero {
 
     @Id
     private int id;
-    private String email;
-    private String nome;
-    private String senha;
+    private String name;
 
-    public Usuario() {}
+    public Genero() {}
 }

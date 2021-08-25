@@ -27,4 +27,24 @@ public class ReviewService {
 
         return persistedEntity;
     }
+
+    public List<Review> findAll() {
+        List<Review> reviewList = null;
+
+        if (repository != null) {
+            reviewList = repository.findAll();
+        }
+
+        return reviewList;
+    }
+
+    public Review findByfilmId(int filmId) {
+        Review insertedEntity = null;
+
+        if (repository != null) {
+            insertedEntity = repository.findByfilmId(filmId);
+        }
+
+        return insertedEntity;
+    }
 }

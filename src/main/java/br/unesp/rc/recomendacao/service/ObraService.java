@@ -15,6 +15,16 @@ public class ObraService {
     @Autowired
     private ObraRepository repository;
 
+    public Obra save(Obra entity) {
+        Obra persistedEntity = null;
+
+        if (repository != null) {
+            repository.save(entity);
+        }
+
+        return persistedEntity;
+    }
+
     public List<Obra> findAll() {
         List<Obra> listaObras = null;
 
